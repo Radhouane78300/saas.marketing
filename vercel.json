@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/api/auth",         "destination": "/api/auth.js"  },
+    { "source": "/api/auth/(.*)",    "destination": "/api/auth.js"  },
+    { "source": "/api/data/(.*)",    "destination": "/api/data.js"  },
+    { "source": "/health",           "destination": "/api/data.js"  },
+    { "source": "/(.*)",             "destination": "/index.html"   }
+  ],
+  "crons": [
+    { "path": "/api/data/cron", "schedule": "0 3 * * *" }
+  ]
+}
